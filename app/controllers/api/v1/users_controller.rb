@@ -13,7 +13,6 @@ class Api::V1::UsersController < ApplicationController
   private 
 
   def user_params 
-    params.require(:user).permit(:username, :password_digest,
-    boards_attributes: [:id, :title, :user_id, :_destroy, images_attributes: %i[id title uploaded_img]])
+    params.require(:user).permit(:username, :password_digest)
   end
 end

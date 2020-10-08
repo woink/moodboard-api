@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_10_08_140649) do
 
   create_table "images", force: :cascade do |t|
     t.string "title"
+    t.integer "x_cord"
+    t.integer "y_cord"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

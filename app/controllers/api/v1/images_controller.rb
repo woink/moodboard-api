@@ -1,13 +1,18 @@
 class Api::V1::ImagesController < ApplicationController
-
+  
   def create
-    image = Image.create(image_params)
-    render json: image
+    byebug
+    image = Image.new(image_params)
+    if params[:img_src] != ''
+      image.img_src.attach(params[:img_src])
+      image.img_url = url_for(image.img_src)
+
+      image.save
   end
 
   private
 
   def image_params
-    params.require(:image).permit(:title, :uploaded_img)
+    params.require(:image).permit(:title)
   end
 end
