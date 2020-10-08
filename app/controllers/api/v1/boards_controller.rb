@@ -1,5 +1,5 @@
 class Api::V1::BoardsController < ApplicationController
-  
+
   def index
     boards = Board.all
     render json: boards
@@ -9,9 +9,7 @@ class Api::V1::BoardsController < ApplicationController
     board = Board.create(board_params)
     render json: board
   end
-
   
-
   private
 
   def board_params

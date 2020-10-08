@@ -1,13 +1,19 @@
-class Api::V1::BoardsController < ApplicationController
+class Api::V1::UsersController < ApplicationController
+
+  def index
+    users = User.all
+    render json: users
+  end
 
   def create 
     user = User.create(user_params)
-    render json: users
+    render json: user
   end
 
   private 
 
   def user_params 
-    params.require(:user).permit(:title)
+    params.require(:user).permit(:username, :password_digest,
+    boards_attributes: [:id, :title, :user_id, :_destroy, images_attributes: %i[id title ]])
   end
 end
