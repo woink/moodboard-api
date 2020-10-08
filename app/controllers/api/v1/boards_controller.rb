@@ -1,4 +1,5 @@
-class BoardsController < ApplicationController
+class Api::V1::BoardsController < ApplicationController
+  
   def index
     boards = Board.all
     render json: boards
@@ -9,15 +10,11 @@ class BoardsController < ApplicationController
     render json: board
   end
 
-  def destroy
-  end
-
-  def update
-  end
+  
 
   private
 
   def board_params
-    params.require(:board).premit(:title)
+    params.require(:board).permit(:title)
   end
 end
