@@ -11,12 +11,19 @@ Board.destroy_all
 BoardImage.destroy_all
 User.destroy_all
 
-User.create(username: "Tom", password_digest: "1234")
+tom = User.create(username: "Tom", password_digest: "1234", email: "whatever@email.com")
 Board.create(title: "Test1", user_id: 1)
 Board.create(title: "Test2", user_id: 1)
 Board.create(title: "Test3", user_id: 1)
 
-Image.create(title: 'Img_1')
+img = Image.new(title: 'Img_1')
+img.uploaded_img.attach(
+  io: File.open('storage/websocket.jpg'),
+  filename: 'test.jpg',
+  content_type: 'image/jpg'
+)
+img.save!
+
 Image.create(title: 'Img_2')
 Image.create(title: 'Img_3')
 Image.create(title: 'Img_4')
