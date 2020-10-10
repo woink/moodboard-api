@@ -21,4 +21,7 @@ class Api::V1::ImagesController < ApplicationController
     params.require(:image).permit(:title)
   end
 end
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8a70e4558361fcb98469edd4cad6a675c3ebf6a3
