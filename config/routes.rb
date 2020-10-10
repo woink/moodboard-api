@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :board_images, only: [:create, :destroy]
   resources :images, only: [:index, :create]
   
+
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :create] 

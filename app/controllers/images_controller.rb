@@ -12,13 +12,14 @@ class ImagesController < ApplicationController
   end
   
   def create
-    image = Image.create(params[:id])
-    image.save
-    if params[:img_src] != ''
+    image = Image.create()
+    # image.save
+    # if params[:img_src] != ''
       image.img_src.attach(params[:img_src])
-      image.save
       image.img_url = url_for(image.img_src)
       image.save
+      render json: image
+      # image.save
     end
   end
 
@@ -26,7 +27,7 @@ class ImagesController < ApplicationController
   def get_board
     @board = Board.find(params[:board_id])
   end
-  def image_params
-    params.require(:image).permit(:title)
-  end
-end
+  # def image_params
+  #   params.require(:image).permit(:title)
+  # end
+# end

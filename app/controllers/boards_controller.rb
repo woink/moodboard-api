@@ -7,7 +7,7 @@ class BoardsController < ApplicationController
   end
 
   def create
-    board = Board.create(params[:id])
+    board = Board.create(board_params)
     render json: board
   end
 
@@ -19,6 +19,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title)
+    params.require(:board).permit(:title, :user_id)
   end
 end
