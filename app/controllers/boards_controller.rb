@@ -1,13 +1,13 @@
 class BoardsController < ApplicationController
-  before_action :get_user, except: [:create]
+  # before_action :get_user, except: [:create]
 
   def index
-    boards = @user.boards
+    boards = Board.all
     render json: boards
   end
 
   def create
-    board = @user.board.build(board_params)
+    board = Board.create(params[:id])
     render json: board
   end
 
@@ -17,10 +17,6 @@ class BoardsController < ApplicationController
   end
   
   private
-
-  def get_user
-    @user = User.find(params[:user_id])
-  end
 
   def board_params
     params.require(:board).permit(:title)

@@ -1,8 +1,8 @@
 class ImagesController < ApplicationController
-  before_action :get_board
+  # before_action :get_board
 
   def index
-    images = @board.images
+    images = Images.all
     render json: images
   end
 
@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
   end
   
   def create
-    image = @board.Image.build(image_params)
+    image = Image.create(params[:id])
     image.save
     if params[:img_src] != ''
       image.img_src.attach(params[:img_src])
