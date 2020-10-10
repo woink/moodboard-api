@@ -1,4 +1,4 @@
-class Api::V1::BoardsController < ApplicationController
+class BoardsController < ApplicationController
   before_action :get_user, except: [:create]
 
   def index
