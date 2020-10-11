@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  # before_action :get_board
+  skip_before_action :authorized
 
   def index
     images = Images.all
@@ -12,13 +12,11 @@ class ImagesController < ApplicationController
   end
   
   def create
-    image = Image.create(params[:id])
-    image.save
-    if params[:img_src] != ''
+    image = Image.create()
       image.img_src.attach(params[:img_src])
-      image.save
       image.img_url = url_for(image.img_src)
       image.save
+      render json: image
     end
   end
 
@@ -26,7 +24,7 @@ class ImagesController < ApplicationController
   def get_board
     @board = Board.find(params[:board_id])
   end
-  def image_params
-    params.require(:image).permit(:title)
-  end
-end
+  # def image_params
+  #   params.require(:image).permit(:title)
+  # end
+# end

@@ -48,3 +48,5 @@ gem "aws-sdk-s3"
 gem "jwt", "~> 2.2"
 
 gem "faker", "~> 2.14"
+
+gem 'mini_magick'
