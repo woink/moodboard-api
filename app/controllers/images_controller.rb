@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  # before_action :get_board
+  skip_before_action :authorized
 
   def index
     images = Images.all
@@ -13,13 +13,10 @@ class ImagesController < ApplicationController
   
   def create
     image = Image.create()
-    # image.save
-    # if params[:img_src] != ''
       image.img_src.attach(params[:img_src])
       image.img_url = url_for(image.img_src)
       image.save
       render json: image
-      # image.save
     end
   end
 
