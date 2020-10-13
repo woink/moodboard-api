@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
   # before_action :get_user, except: [:create]
-  skip_before_action :authorized
+  # skip_before_action :authorized
 
   def index
     boards = Board.all

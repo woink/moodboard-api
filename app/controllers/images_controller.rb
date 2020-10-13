@@ -1,8 +1,8 @@
 class ImagesController < ApplicationController
-  skip_before_action :authorized
+  # skip_before_action :authorized
 
   def index
-    images = Images.all
+    images = Image.all
     render json: images
   end
 
@@ -17,14 +17,12 @@ class ImagesController < ApplicationController
       image.img_url = url_for(image.img_src)
       image.save
       render json: image
-    end
   end
 
-  private
-  def get_board
-    @board = Board.find(params[:board_id])
+
+  def destroy 
+    image = Image.find(params[:id])
+    image.destroy
   end
-  # def image_params
-  #   params.require(:image).permit(:title)
-  # end
-# end
+end
+ 
