@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
   def create
     image = Image.create()
       image.img_src.attach(params[:img_src])
-      image.img_url = url_for(image.img_src)
+      image.src = url_for(image.img_src)
       image.save
       render json: image
   end

@@ -6,6 +6,12 @@ class BoardImagesController < ApplicationController
     render json: board_images
   end
 
+  def update
+    board_image = BoardImage.find(params[:id])
+    board_image.update(x: params[:x], y: params[:y])
+    render json: board_image
+  end
+
   def create
     # byebug
     board_image = BoardImage.create(board_image_params)

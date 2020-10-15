@@ -1,6 +1,6 @@
 class BoardSerializer < ActiveModel::Serializer
-  attributes :id, :title, :images, :board_state
-  # has_many :board_images
+  attributes :id, :title, :images
+  has_many :board_images
   has_many :images, through: :board_images
 
   # def images

@@ -39,22 +39,21 @@ ActiveRecord::Schema.define(version: 2020_10_08_140649) do
   create_table "board_images", force: :cascade do |t|
     t.integer "board_id"
     t.integer "image_id"
+    t.integer "x"
+    t.integer "y"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "boards", force: :cascade do |t|
     t.string "title"
-    t.json "board_state"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "img_url"
-    t.integer "x_cord"
-    t.integer "y_cord"
+    t.string "src"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
