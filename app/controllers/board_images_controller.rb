@@ -18,6 +18,11 @@ class BoardImagesController < ApplicationController
     # byebug
     render json: board_image
   end
+
+  def destroy
+    board_image = BoardImage.find(params[:id])
+    board_image.destroy
+  end
   
   private
 

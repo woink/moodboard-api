@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # post 'board_images/create', to: 'board_images#create'
   resources :boards, only: [:index, :create, :destroy]
   resources :board_images, only: [:index, :update, :create, :destroy]
-  resources :images, only: [:index, :create, :destroy]
+  resources :images, only: [:index, :create, :show, :destroy]
   resources :users
   
   resources :boards do
