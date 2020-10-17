@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_10_08_140649) do
     t.integer "image_id"
     t.integer "x"
     t.integer "y"
+    t.integer "width"
+    t.integer "height"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

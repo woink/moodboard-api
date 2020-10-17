@@ -5,6 +5,8 @@ class CreateBoardImages < ActiveRecord::Migration[6.0]
       t.integer :image_id
       t.integer :x
       t.integer :y
+      t.integer :width
+      t.integer :height
 
       t.timestamps
     end

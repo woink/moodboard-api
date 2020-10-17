@@ -8,7 +8,7 @@ class BoardImagesController < ApplicationController
 
   def update
     board_image = BoardImage.find(params[:id])
-    board_image.update(x: params[:x], y: params[:y])
+    board_image.update(x: params[:x], y: params[:y], width: params[:width], height: params[:height])
     render json: board_image
   end
 

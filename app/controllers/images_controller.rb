@@ -19,7 +19,6 @@ class ImagesController < ApplicationController
       render json: image
   end
 
-
   def destroy 
     image = Image.find(params[:id])
     image.destroy
