@@ -27,6 +27,6 @@ class BoardImagesController < ApplicationController
   private
 
   def board_image_params
-    params.require(:board_image).permit(:image_id, :board_id)
+    params.require(:board_image).permit(:image_id, :board_id, :x, :y, :width, :height)
   end
 end 
