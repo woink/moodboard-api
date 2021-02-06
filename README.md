@@ -10,4 +10,4 @@
 
 
 
-Backend is located at [/woink/moodboard-fe](https://github.com/woink/moodboard-fe)
+Frontend is located at [/woink/moodboard-fe](https://github.com/woink/moodboard-fe)
